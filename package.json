@@ -1,0 +1,38 @@
+{
+  "name": "separation-poc-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "separate admin panel from APIs demo",
+  "scripts": {
+    "console": "strapi console",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/database": "5.53.0",
+    "@strapi/plugin-cloud": "5.53.0",
+    "@strapi/plugin-users-permissions": "5.53.0",
+    "@strapi/strapi": "5.53.0",
+    "better-sqlite3": "12.8.0"
+  },
+  "//": "react/react-dom/react-router-dom/styled-components are admin-panel peer deps. This app never serves or builds the dashboard, but `strapi develop` checks for them before starting. devDependencies satisfies that check and keeps them out of the production API image (npm ci --omit=dev).",
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "b6016d98-63b0-4c2e-b678-26f6518b995c",
+    "installId": "a399da5ad1626c7896f33809766de85b4a5d82183193096736b2b5abcf0f45d8"
+  }
+}
